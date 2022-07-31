@@ -1,0 +1,40 @@
+/* all todo page  */
+    .create_new {
+      background-color: rgb(18, 52, 243);
+      border-style: none;
+
+      outline: aliceblue;
+      border-radius: 5px;
+      height: 50px;
+      width: 100px;
+    }
+    .create_new_link {
+      color: white;
+    }
+    .create_new_link:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    table,
+    tr,
+    td,
+    th {
+      border: 2px solid black;
+      margin: 0 auto;
+      width: 50vw;
+      height: 50px;
+    }
+    th {
+      font-size: large;
+      text-align: center;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      background-color: blue;
+      color: white;
+      text-align: center;
+    }

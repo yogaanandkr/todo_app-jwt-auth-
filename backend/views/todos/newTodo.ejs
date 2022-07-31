@@ -1,0 +1,22 @@
+<%- include('../partials/head.ejs') -%>
+<body>
+  <%- include('../partials/nav.ejs') -%>
+
+  <form action=""></form>
+
+  <%- include('../partials/footer.ejs') -%>
+
+  <form action="/api/todos/" method="post">
+    <label for="task">Task: </label>
+    <input type="text" name="task" id="task" />
+    <label for="due">Due: </label>
+    <input name="due" value="date" type="date" />
+    <label for="status">Status: </label>
+    <select name="status" id="">
+      <% for( let status of statuses) { %>
+      <option value="<%=status%>"><%=status%></option>
+      <% } %>
+    </select>
+    <button type="submit">submit</button>
+  </form>
+</body>

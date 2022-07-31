@@ -1,0 +1,17 @@
+<%- include('../partials/head.ejs') -%>
+<body>
+  <%- include('../partials/nav.ejs') -%>
+  <form action="/api/todos/<%=editTodo._id%>?_method=PATCH" method="POST">
+    <label for="task">Edit Task:</label>
+    <input type="text" value="<%= editTodo.task%>" name="task" id="task" />
+    <label for="due">Due: </label>
+    <input name="due" type="date" />
+    <label for="status">Status: </label>
+    <select name="status" id="">
+      <% for( let status of statuses) { %>
+      <option value="<%=status%>"><%=status%></option>
+      <% } %>
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</body>

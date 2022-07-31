@@ -1,0 +1,34 @@
+<%- include('../partials/head.ejs') -%>
+<body>
+  <%- include('../partials/nav.ejs') -%>
+
+  <h1 class="heading">My Tasks</h1>
+  <button class="create_new">
+    <a class="create_new_link" href="/api/todos/newtodo">Create New</a>
+  </button>
+
+  <table>
+    <tr>
+      <th>Task</th>
+      <th>duedate</th>
+      <th>status</th>
+      <th class="last-th"></th>
+    </tr>
+    <% for(let todo of todos){ %>
+    <tr>
+      <td><a href="/api/todos/update/<%= todo._id%>"><%= todo.task %></a></td>
+      <td><%= todo.due %></td>
+      <td><%= todo.status %></td>
+      <td class="last-th">
+        <form action="/api/todos/<%=todo.id%>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+
+  <%- include('../partials/footer.ejs') -%>
+
+  <form action=""></form>
+</body>
